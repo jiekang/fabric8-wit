@@ -315,7 +315,7 @@ regenerate: clean-generated generate
 
 .PHONY: dev
 dev: prebuild-check deps generate $(FRESH_BIN) docker-compose-up
-	F8_DEVELOPER_MODE_ENABLED=true $(FRESH_BIN)
+	FABRIC8_WIT_API_URL=https://api.openshift.io F8_CONFIG_FILE_PATH=jkconfig.yaml F8_DEVELOPER_MODE_ENABLED=true $(FRESH_BIN)
 
 .PHONY: docker-compose-up
 docker-compose-up:
